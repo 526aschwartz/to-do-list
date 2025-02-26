@@ -16,3 +16,39 @@ document.getElementById('addTaskBtn').addEventListener('click', function() {
     }
 
 })
+
+//function to display task
+function displayTasks() {
+    //getting UL from HTML
+    let taskList = document.getElementById('taskList')
+    //clear existing tasks from list 
+    taskList.innerHTML = ''
+
+    //loop through each task in array and create a list item
+    tasks.forEach((task, index) => {
+        //create a new list element for new task
+        let li = document.createElement('li')
+        //add bootstrap classes
+        li.classList.add (
+            'list-group-item',
+            'd-flex',
+            'justify-content-between',
+            'align-item-center'
+        )
+        //inner html Li element with task text
+        li.innerHTML = `${task} <button class='btn btn-dark btn-sm' onclick='removeTask(${index})'> √ </button> `
+
+        //append new task
+        taskList.appendChild(li)
+    }
+
+    )
+}
+
+//function to remove task
+function removeTask (index){
+    //remove the task at the given index from array
+    tasks.splice(index, 1)
+    //get function to display task
+    displayTasks()
+}
