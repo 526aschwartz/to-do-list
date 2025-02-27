@@ -59,3 +59,20 @@ document.getElementById('clearTaskBtn').addEventListener('click', function() {
     //displays the nothing
     displayTasks()
 })
+
+//enter key event listener 
+taskInput.addEventListener('keydown', function(event) {
+    //if event button clicked
+    if(event.key === 'Enter'){
+
+    let taskInput = document.getElementById('taskInput').value
+
+    if(taskInput) {
+    //pushes value end of array    
+        tasks.push(taskInput)
+//value is cleared atr button is clicked
+        document.getElementById('taskInput').value =""
+//update array
+        displayTasks()
+    }}
+})

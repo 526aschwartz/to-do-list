@@ -17,6 +17,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="task.css">
+    <link rel="stylesheet" href="https://use.typekit.net/wta0qyp.css">
   </head>
 
   <body>
@@ -34,13 +37,21 @@
               />
             </div>
             <div class="col-4">
-              <button id="addTaskBtn" class="btn btn-primary w-100">
+              <button id="addTaskBtn" class="btn-add w-100">
                 Add Task
               </button>
             </div>
           </div>
           <ul id="taskList" class="list-group mt-3"></ul>
-          <button id="clearTaskBtn" class="btn btn-danger w-100 mt-3">Clear all Tasks</button>
+          <div id="wrapper">
+            <div class="col">
+              <a class="btn-clear light" id="clearTaskBtn" href="#">
+                <span class="text">Clear Tasks</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.66669 11.3334L11.3334 4.66669" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.66669 4.66669H11.3334V11.3334" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+          <div id="taskCount" class="mt-2">Total Tasks: 0</div>
         </div>
       </div>
     </main>
